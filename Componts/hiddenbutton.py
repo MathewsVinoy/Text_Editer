@@ -1,10 +1,9 @@
 from PySide6 import QtCore
-from PySide6.QtWidgets import QPushButton
+from PySide6 import QtWidgets
 
-class HiddenButton(QPushButton):
-    """docstring for HiddenButton."""
-
+class HiddenButton(QtWidgets.QPushButton):
     hover = QtCore.Signal()
+
     def __init__(self, parent):
         super(HiddenButton, self).__init__(parent)
         self.setUpdatesEnabled(False)
