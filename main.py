@@ -1,9 +1,15 @@
 import sys
-from PySide6.QtWidgets import QApplication
-from main_screen import WindowHolder
+from PySide6.QtCore import QUrl
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = WindowHolder()
-    window.show()
-    app.exec()
+    app = QGuiApplication(sys.argv)
+
+    engine = QQmlApplicationEngine()
+    engine.loadFromModule("CodeEditorModel", "Main")
+
+    if not engine.rootObjects():
+        sys.exit(-1)
+
+    sys.exit(app.exec())

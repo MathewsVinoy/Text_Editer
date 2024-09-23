@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/qt/qml/CodeEditorModel">
+        <file>qmldir</file>
+        <file>main.qml</file>
+</RCC>
