@@ -2,4 +2,6 @@
     <qresource prefix="/qt/qml/CodeEditorModel">
         <file>qmldir</file>
         <file>main.qml</file>
+        <file>qml/Menu.qml</file>
+        <file>qml/ManuBar.qml</file>
 </RCC>

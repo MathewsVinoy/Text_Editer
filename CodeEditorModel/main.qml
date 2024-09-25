@@ -5,22 +5,39 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+        menuBar: MenuBar {
 
-    Column {
-        anchors.centerIn: parent
+        Menu {
+            title: qsTr("File")
 
-        Label {
-            id: label
-            text: qsTr("Hello World")
-            font.pointSize: 24
+            Action {
+                text: qsTr("Increase Font")
+                shortcut: StandardKey.ZoomIn
+                onTriggered: editor.text.font.pixelSize += 1
+            }
+            Action {
+                text: qsTr("Decrease Font")
+                shortcut: StandardKey.ZoomOut
+                onTriggered: editor.text.font.pixelSize -= 1
+            }
         }
 
-        Button {
-            text: qsTr("Click Me")
-            onClicked: {
-                label.text = qsTr("Button Clicked")
+        Menu {
+            title: qsTr("Edit")
+
+            Action {
+                text: qsTr("Cut")
+                shortcut: StandardKey.Cut
+                enabled: editor.text.selectedText.length > 0
+                onTriggered: editor.text.cut()
             }
+            Action {
+                text: qsTr("Copy")
+                shortcut: StandardKey.Copy
+                enabled: editor.text.selectedText.length > 0
+                onTriggered: editor.text.copy()
+            }
+            
         }
     }
 }
