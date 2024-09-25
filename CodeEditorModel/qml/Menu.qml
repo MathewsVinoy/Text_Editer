@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Basic
-import FileSystemModule
+import CodeEditorModel
 
 Menu {
     id: root

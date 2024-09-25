@@ -1,43 +1,45 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls.Basic
+import QtQuick.Layouts
+import CodeEditorModel
+
+pragma ComponentBehavior: Bound
 
 ApplicationWindow {
-    visible: true
-    width: 640
-    height: 480
-        menuBar: MenuBar {
+     id: root
 
+    property bool expandPath: false
+    property bool showLineNumbers: true
+    property string currentFilePath: ""
+
+    width: 1100
+    height: 600
+    minimumWidth: 200
+    minimumHeight: 100
+    visible: true
+    flags: Qt.Window | Qt.FramelessWindowHint
+    title: qsTr("File System Explorer Example")
+    menuBar: MenuBar {
+        dragWindow: root
         Menu {
             title: qsTr("File")
-
             Action {
                 text: qsTr("Increase Font")
-                shortcut: StandardKey.ZoomIn
-                onTriggered: editor.text.font.pixelSize += 1
             }
             Action {
-                text: qsTr("Decrease Font")
-                shortcut: StandardKey.ZoomOut
-                onTriggered: editor.text.font.pixelSize -= 1
+                text: qsTr("Decrease Font")   
             }
         }
-
         Menu {
             title: qsTr("Edit")
-
             Action {
-                text: qsTr("Cut")
-                shortcut: StandardKey.Cut
-                enabled: editor.text.selectedText.length > 0
-                onTriggered: editor.text.cut()
+                text: qsTr("Cut")  
             }
             Action {
-                text: qsTr("Copy")
-                shortcut: StandardKey.Copy
-                enabled: editor.text.selectedText.length > 0
-                onTriggered: editor.text.copy()
+                text: qsTr("Copy") 
             }
             
         }
     }
+    
 }

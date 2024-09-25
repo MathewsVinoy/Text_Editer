@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
-import FileSystemModule
+import CodeEditorModel
 
 // The MenuBar also serves as a controller for our window as we don't use any decorations.
 MenuBar {
@@ -168,7 +168,7 @@ MenuBar {
         color: Colors.surface2
         // Make the empty space drag the specified root window.
         WindowDragHandler {
-            dragWindow: root.dragWindow
+           dragWindow: root.dragWindow
         }
     }
 }

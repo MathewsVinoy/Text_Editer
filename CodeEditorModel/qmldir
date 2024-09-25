@@ -2,3 +2,5 @@ model CodeEditorModel
 Main 1.0 main.qml
 Menu 1.0 qml/Menu.qml
 MenuBar 1.0 qml/MenuBar.qml
+singleton Colors 1.0 qml/Colors.qml
+WindowDragHandler 1.0 qml/WindowDragHandler.qml

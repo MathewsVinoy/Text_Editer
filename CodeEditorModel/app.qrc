@@ -4,4 +4,6 @@
         <file>main.qml</file>
         <file>qml/Menu.qml</file>
         <file>qml/ManuBar.qml</file>
+        <file>qml/Colors.qml</file>
+        file>qml/WindowDragHandler.qml</file>
 </RCC>
